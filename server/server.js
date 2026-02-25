@@ -25,7 +25,6 @@ io.on("connection", (socket) => {
   console.log("User Connected", userId);
   if (!userId || typeof userId !== "string") return;
 
-
   //  Initialize array if first connection
   if (!userSocketMap[userId]) {
     userSocketMap[userId] = [];
@@ -33,9 +32,8 @@ io.on("connection", (socket) => {
 
   //  Store socketId (multi-device support)
   if (!userSocketMap[userId].includes(socket.id)) {
-  userSocketMap[userId].push(socket.id);
-}
-
+    userSocketMap[userId].push(socket.id);
+  }
 
   //  Broadcast online users
   io.emit("getOnlineUsers", Object.keys(userSocketMap));
@@ -71,5 +69,10 @@ app.use("/api/messages", messageRouter);
 // Connect to MongoDB
 await connectDB();
 
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log("Server is Running on PORT: " + PORT));
+if (process.env.NODE_ENV != "production") {
+  const PORT = process.env.PORT || 5000;
+  server.listen(PORT, () => console.log("Server is Running on PORT: " + PORT));
+}
+
+// Export Server for vercel
+export default server;
