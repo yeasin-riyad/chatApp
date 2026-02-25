@@ -6,6 +6,15 @@ This app allows users to send and receive messages in real-time without reloadin
 
 ---
 
+## 🌐 Live Demo
+
+🚀 **Live Application:**  
+👉 https://chat-app-client-zeta-ten.vercel.app  
+
+Try it out and experience real-time messaging instantly!
+
+---
+
 ## 🚀 Features
 
 - 🔐 User Authentication (Register & Login)
@@ -26,7 +35,7 @@ This app allows users to send and receive messages in real-time without reloadin
 - React.js
 - Axios
 - Socket.IO Client
-- CSS / Tailwind (if used)
+- Tailwind CSS
 
 ### Backend
 - Node.js
@@ -49,5 +58,7 @@ When a user sends a message:
 3. Receiver instantly receives the message.
 4. No page reload required.
 
-### 🔁 Real-Time Flow
+---
+
+## 🧠 How Real-Time Works
 
